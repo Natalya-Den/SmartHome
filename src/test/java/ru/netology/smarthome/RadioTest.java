@@ -22,7 +22,7 @@ class RadioTest {
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/setStationCounter.csv")
     void setCurrentStationWithCounterTest(int station, int expected) {
-        Radio rad = new Radio(0,0,17);
+        Radio rad = new Radio(0, 0, 17);
 
         rad.setCurrentStation(station);
         int actual = rad.getCurrentStation();
@@ -55,7 +55,7 @@ class RadioTest {
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/nextStationCounter.csv")
     void nextStationWithCounterTest(int station, int expected) {
-        Radio rad = new Radio(0,0,17);
+        Radio rad = new Radio(0, 0, 17);
 
         rad.setCurrentStation(station);
         int actual = rad.nextStation();
@@ -77,7 +77,7 @@ class RadioTest {
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/prevStationCounter.csv")
     void prevStationWithCounterTest(int station, int expected) {
-        Radio rad = new Radio(0,0,17);
+        Radio rad = new Radio(0, 0, 17);
 
         rad.setCurrentStation(station);
         int actual = rad.prevStation();
