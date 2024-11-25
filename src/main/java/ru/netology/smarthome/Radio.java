@@ -1,13 +1,22 @@
 package ru.netology.smarthome;
 
 public class Radio {
-    public int currentStation;
-    public int currentVolume;
+    private int currentStation;
+    private int currentVolume;
+    private int countStation = 10;
+
+    public Radio(int countStation) {
+        this.countStation = countStation;
+    }
+
+    public Radio() {
+
+    }
 
     public void setCurrentStation(int station) {
-        if ((station < 0) || (station > 9)) {
+        if ((station < 0) || (station > countStation - 1)) {
             currentStation = 0;
-            System.out.println("Введите номер станции от 0 до 9. Вы ввели " + station);
+            System.out.println("Введите номер станции от 0 до " + (countStation - 1) + ". Вы ввели " + station);
         } else {
             currentStation = station;
         }
@@ -31,7 +40,7 @@ public class Radio {
     }
 
     public int nextStation() {
-        if (currentStation >= 9) {
+        if (currentStation >= countStation - 1) {
             return currentStation = 0;
         } else {
             currentStation++;
@@ -41,7 +50,7 @@ public class Radio {
 
     public int prevStation() {
         if (currentStation <= 0) {
-            return currentStation = 9;
+            return currentStation = countStation - 1;
         } else {
             currentStation--;
             return currentStation;
