@@ -1,17 +1,18 @@
 package ru.netology.smarthome;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+
 public class Radio {
-    private int currentStation;
-    private int currentVolume;
+    private int currentStation = 0;
+    private int currentVolume = 0;
     private int countStation = 10;
 
-    public Radio(int countStation) {
-        this.countStation = countStation;
-    }
-
-    public Radio() {
-
-    }
 
     public void setCurrentStation(int station) {
         if ((station < 0) || (station > countStation - 1)) {
